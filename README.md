@@ -1,3 +1,4 @@
+***Само задание https://github.com/kya28/TestingTask/blob/master/task.md***
 # Описание принципов работы
 
 * Клиентская часть написана в Eclipse (Java SE7 – Swing).
@@ -33,8 +34,9 @@ https://github.com/kya28/TestingTask/blob/master/resultImg/ConnectionDatabaseMes
 * TestingTask.java - интерфейс проекта.
 https://github.com/kya28/TestingTask/blob/master/resultImg/ApplicationInterface.png
 
- * Details.java - модель объкта и методы.
- *** Модель объекта:***
+ * Details.java - модель объекта и методы.
+
+ ### Модель объекта:
  ```java
  public class Details {
 	private String name;
