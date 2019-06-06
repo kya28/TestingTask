@@ -14,7 +14,6 @@
 	public static String userName = "postgres";
 	public static String password = "r7c8.9i4f";
 	
-	
 	public static Connection conn() {
 		Connection connection = null;
 		try {
@@ -27,6 +26,13 @@
 		return connection;
 	}
 ```
+При запуске программы выходит сообщение об успешном подключении к бд
+
+https://github.com/kya28/TestingTask/blob/master/resultImg/ConnectionDatabaseMessage.png
+
+* TestingTask.java - интерфейс проекта.
+https://github.com/kya28/TestingTask/blob/master/resultImg/ApplicationInterface.png
+
  * Details.java - модель объкта и методы.
  *** Модель объекта:***
  ```java
@@ -210,4 +216,4 @@ public void allDetails(JTable table) {
 		}
 	}
  ```
- * TestingTask.java - интерфейс проекта.
+ 
