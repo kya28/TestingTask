@@ -28,7 +28,7 @@
 	}
 ```
  * Details.java - модель объкта и методы.
- ** Модель объекта:
+ *** Модель объекта:***
  ```java
  public class Details {
 	private String name;
@@ -53,7 +53,7 @@
 		this.name = name;
 	}
  ```
-** Метод добавления в базу данных:
+ Метод добавления в базу данных:
  ```java
  public void addDetails(String name, Integer amount) {
 			try {							
@@ -72,7 +72,7 @@
 				}
 	}
  ```
- ** Метод добавления объекта с тем же наименованием (количество суммируется):
+Метод добавления объекта с тем же наименованием (количество суммируется):
  ```java
  public void addDetailsIfIsInTheDatabase(String name, Integer amount){
 			try {
@@ -90,7 +90,7 @@
 		}		
 	}
  ```
- ** Метод удаления объекта:
+ Метод удаления объекта:
  ```java
  public void deleteDetails(String name) {
 		try {
@@ -110,7 +110,7 @@
 		}
 	}
  ```
- ** Метод редактирования наименования :
+ Метод редактирования наименования :
  ```java
 public void editName() {
 				try {
@@ -136,7 +136,7 @@ public void editName() {
 				}
 			}		
  ```
- ** Метод редактирования количества:
+ Метод редактирования количества:
  ```java
  public void editAmount() {
 				try {
@@ -160,7 +160,7 @@ public void editName() {
 				}
 			}
  ```
- ** Метод сортировки по именованию и по количеству:
+ Метод сортировки по именованию и по количеству:
  ```java
 public void sortByName(JTable table) {
 		try {
@@ -175,6 +175,33 @@ public void sortByName(JTable table) {
 	public void sortByAmountDesc(JTable table) {
 		try {
 			String query = "SELECT * FROM details ORDER BY amount DESC";
+			Statement statement = connection.createStatement();
+			ResultSet resultS = statement.executeQuery(query);
+			table.setModel(DbUtils.resultSetToTableModel(resultS));
+		}catch (SQLException e2) {
+			e2.printStackTrace();
+		}
+	}
+ ```
+ Метод поиска по наименованию:
+ ```java
+public void searchToName() {
+				try {
+				String sql = "SELECT * from details where name = ?";
+				PreparedStatement preparedStatement = connection.prepareStatement(sql);
+				preparedStatement.setString(1, textField_name.getText());
+				ResultSet rs = preparedStatement.executeQuery();
+				table.setModel(DbUtils.resultSetToTableModel(rs));
+				}catch(Exception e7) {
+					JOptionPane.showMessageDialog(null,e7);
+				}
+			}
+ ```
+ Метод обновления отображения базы данных:
+ ```java
+public void allDetails(JTable table) {
+		try {
+			String query = "select * from details";
 			Statement statement = connection.createStatement();
 			ResultSet resultS = statement.executeQuery(query);
 			table.setModel(DbUtils.resultSetToTableModel(resultS));
