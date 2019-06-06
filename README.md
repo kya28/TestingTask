@@ -59,7 +59,8 @@ https://github.com/kya28/TestingTask/blob/master/resultImg/ApplicationInterface.
 		this.name = name;
 	}
  ```
- Метод добавления в базу данных:
+ ## Методы:
+ Метод добавления в базу данных (кнопка Добавить)
  ```java
  public void addDetails(String name, Integer amount) {
 			try {							
@@ -78,7 +79,7 @@ https://github.com/kya28/TestingTask/blob/master/resultImg/ApplicationInterface.
 				}
 	}
  ```
-Метод добавления объекта с тем же наименованием (количество суммируется):
+Метод добавления объекта с тем же наименованием (количество суммируется) (кнопка Добавить)
  ```java
  public void addDetailsIfIsInTheDatabase(String name, Integer amount){
 			try {
@@ -96,7 +97,7 @@ https://github.com/kya28/TestingTask/blob/master/resultImg/ApplicationInterface.
 		}		
 	}
  ```
- Метод удаления объекта:
+ Метод удаления объекта (Кнопка удалить)
  ```java
  public void deleteDetails(String name) {
 		try {
@@ -116,8 +117,8 @@ https://github.com/kya28/TestingTask/blob/master/resultImg/ApplicationInterface.
 		}
 	}
  ```
- Метод редактирования наименования :
- ```java
+ Метод редактирования наименования (кнопка Редактировать наименование)
+  ```java
 public void editName() {
 				try {
 					String amount1 = textField_amount.getText();					
@@ -142,7 +143,7 @@ public void editName() {
 				}
 			}		
  ```
- Метод редактирования количества:
+ Метод редактирования количества (кнопка Изменить количество)
  ```java
  public void editAmount() {
 				try {
@@ -166,7 +167,9 @@ public void editName() {
 				}
 			}
  ```
- Метод сортировки по именованию и по количеству:
+
+ Метод сортировки по именованию (кнопка сортировка по именованию ) и по количеству (кнопка сортировка по количеству)
+
  ```java
 public void sortByName(JTable table) {
 		try {
@@ -189,7 +192,10 @@ public void sortByName(JTable table) {
 		}
 	}
  ```
- Метод поиска по наименованию:
+ Метод поиска по наименованию(кнопка Поиск по именованию и при введении значения)
+
+ *** Этот метод также работает при введении наименования. Сразу же отображает все значения по данному наименованию ***
+
  ```java
 public void searchToName() {
 				try {
@@ -203,7 +209,12 @@ public void searchToName() {
 				}
 			}
  ```
- Метод обновления отображения базы данных:
+ 
+
+ Метод обновления отображения базы данных (кнопка Обновить)
+
+ *** Данный метод необходим, чтобы видит какие измения произошли в бд ***
+
  ```java
 public void allDetails(JTable table) {
 		try {
